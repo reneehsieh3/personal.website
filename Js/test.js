@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const correctText = data.options[correctIndex];
 
     revealLine.textContent = isRight
-      ? `⭕️Correct! — ${data.explain}`
+      ? `🥰Correct! — ${data.explain}`
       : `❌ Wrong. Correct answer: ${correctText}. — ${data.explain}`;
 
     nextBtn.disabled = false;
