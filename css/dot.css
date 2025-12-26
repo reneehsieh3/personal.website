@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #050812;
+  font-family: "Geom", sans-serif;
+}
+
+.hint {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 15;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#starfield {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.dot {
+  position: absolute;
+  width: 26px;               
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #030303 0%, #050505 60%, transparent 70%);
+  opacity: 0.75;
+  filter: blur(0.2px);
+  cursor: pointer;
+  z-index: 2;
+
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dot:hover {
+  transform: scale(1.8);
+  opacity: 1;
+}
+
+@keyframes float {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(8px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+.mask {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 18, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+
+.intext_container {
+  width: 32vw;
+  height: 32vw;
+  min-width: 260px;
+  min-height: 260px;
+  border-radius: 50%;
+
+  background: radial-gradient(circle at top left,
+    #57e6ff,
+    #6c72f9,
+    #0b1026
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 30px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  box-shadow: 0 0 60px rgba(87,230,255,0.4);
+}
